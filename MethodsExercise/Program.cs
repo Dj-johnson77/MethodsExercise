@@ -1,4 +1,6 @@
-﻿namespace MethodsExercise
+﻿using System.Reflection.Metadata.Ecma335;
+
+namespace MethodsExercise
 {
     public class Program
     {
@@ -67,10 +69,17 @@
 
 
         }
-        public static int sum(int num1, int num2)
+        public static int sum(params int[] list)
         {
-            return num1 + num2;
-        }
+            int sum = 0;
+            for (int i = 0; i < list.Length; i++)
+            {
+
+                sum = sum + list[i];
+
+            }
+            return sum;
+        }   
         
         public static int multiply(int x, int y)
         {
